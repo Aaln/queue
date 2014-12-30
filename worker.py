@@ -1,18 +1,14 @@
 import os
 from urllib import urlopen
-import grequests
+import requests
 import nltk
 from bs4 import BeautifulSoup
 import redis
 from rq import Worker, Queue, Connection
-from gevent import monkey; monkey.patch_all()
-from gevent.pool import Pool
 
 
 def count_and_save_words(url):
-	#r = grequests.get(url)
-	p = Pool(1)
-	p.map(requests.get, url)
+	r = requests.get(url)
 	
 	return {'a' : 'r'}
 
